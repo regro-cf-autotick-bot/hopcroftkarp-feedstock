@@ -1,5 +1,5 @@
 {% set name = "hopcroftkarp" %}
-{% set version = "1.2.4" %}
+{% set version = "1.2.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: cc6fc7ad348bbe5c9451f8116845c46ae26290c92b2dd14690aae2d55ba5e3a6
+  sha256: 28a7887db81ad995ccd36a1b5164a4c542b16d2781e8c49334dc9d141968c0e7
 
 build:
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   noarch: python
 
 requirements:
